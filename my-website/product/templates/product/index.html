@@ -1,0 +1,32 @@
+{% extends "home/base.html" %}
+{% block my_content %}
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        
+        {% for item in product_list %}
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://placehold.co/200" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    
+                        <a href = "{% url 'product:detail' item.id %}">
+                            <h5 class="card-title">{{ item.title }}</h5>
+                        </a>
+                    <p class="card-text"> {{ item.summary }}</p>
+                    <p class="card-text"> {{ item.price }}</p>
+                    <p class="card-text"> {{ item.quantity }}</p>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+  </div>
+
+{% endblock %}
